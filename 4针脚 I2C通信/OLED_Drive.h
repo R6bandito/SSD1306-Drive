@@ -6,10 +6,10 @@
 
 
 /*
-		@notice: ä¸‹åˆ—ä¸¤ä¸ªå®å®šä¹‰ (USE_I2C_HAREWARE) (USE_I2C_SOFTWARE)åˆ†åˆ«ç”¨äºå¯ç”¨ä¸åŒçš„I2Cé€šè®¯æ–¹å¼.
-			USE_I2C_HAREWARE : å½“å¯ç”¨è¯¥å®ï¼Œä¸”æ³¨é‡Šæ‰ USE_I2C_SOFTWAREæ—¶ï¼Œå°†ä½¿ç”¨ç¡¬ä»¶I2Cé€šä¿¡. (é»˜è®¤)
-			USE_I2C_SOFTWARE : å½“å¯ç”¨è¯¥å®ï¼Œä¸”æ³¨é‡Šæ‰ USE_I2C_HAREWAREæ—¶ï¼Œå°†ä½¿ç”¨è½¯ä»¶æ¨¡æ‹ŸI2Cé€šä¿¡.
-			æ³¨æ„ï¼šç¦æ­¢åŒæ—¶å¯ç”¨	USE_I2C_HAREWARE  USE_I2C_SOFTWARE.
+		@notice: ÏÂÁĞÁ½¸öºê¶¨Òå (USE_I2C_HAREWARE) (USE_I2C_SOFTWARE)·Ö±ğÓÃÓÚÆôÓÃ²»Í¬µÄI2CÍ¨Ñ¶·½Ê½.
+			USE_I2C_HAREWARE : µ±ÆôÓÃ¸Ãºê£¬ÇÒ×¢ÊÍµô USE_I2C_SOFTWAREÊ±£¬½«Ê¹ÓÃÓ²¼şI2CÍ¨ĞÅ. (Ä¬ÈÏ)
+			USE_I2C_SOFTWARE : µ±ÆôÓÃ¸Ãºê£¬ÇÒ×¢ÊÍµô USE_I2C_HAREWAREÊ±£¬½«Ê¹ÓÃÈí¼şÄ£ÄâI2CÍ¨ĞÅ.
+			×¢Òâ£º½ûÖ¹Í¬Ê±ÆôÓÃ	USE_I2C_HAREWARE  USE_I2C_SOFTWARE.
 */
 
 /* **************************  */
@@ -21,16 +21,16 @@
 
 
 /*
-		@notice:	ä¸‹åˆ—å®å®šä¹‰å°†ä»…åœ¨ USE_I2C_SOFTWARE å¯ç”¨æ—¶ç”Ÿæ•ˆ.
-			I2C_Soft_SCL_PortSource , I2C_Soft_SDA_PortSource :é€šä¿¡æ—¶é’Ÿçº¿,æ•°æ®çº¿GPIOç«¯å£çš„ä»£å·.é€šè¿‡è§£é™¤å¯¹åº”ç«¯å£çš„æ³¨é‡Šæ¥å¯ç”¨å¯¹åº”çš„é€šä¿¡ç«¯å£.
-				(æœ€å¤šæ”¯æŒåˆ°GPIOC).
-			I2C_Soft_SCL_PinSource , I2C_Soft_SDA_PinSource :ä¸ºå¯¹åº”GPIOå£çš„å¼•è„šï¼Œä½¿ç”¨æ—¶åº”å°†å…¶æ›´æ¢ä¸ºç”¨æˆ·å®é™…ä½¿ç”¨çš„å¼•è„š.
+		@notice:	ÏÂÁĞºê¶¨Òå½«½öÔÚ USE_I2C_SOFTWARE ÆôÓÃÊ±ÉúĞ§.
+			I2C_Soft_SCL_PortSource , I2C_Soft_SDA_PortSource :Í¨ĞÅÊ±ÖÓÏß,Êı¾İÏßGPIO¶Ë¿ÚµÄ´úºÅ.Í¨¹ı½â³ı¶ÔÓ¦¶Ë¿ÚµÄ×¢ÊÍÀ´ÆôÓÃ¶ÔÓ¦µÄÍ¨ĞÅ¶Ë¿Ú.
+				(×î¶àÖ§³Öµ½GPIOC).
+			I2C_Soft_SCL_PinSource , I2C_Soft_SDA_PinSource :Îª¶ÔÓ¦GPIO¿ÚµÄÒı½Å£¬Ê¹ÓÃÊ±Ó¦½«Æä¸ü»»ÎªÓÃ»§Êµ¼ÊÊ¹ÓÃµÄÒı½Å.
 			
-			é»˜è®¤æƒ…å†µ: PB6 -> I2C_SCL  PB7 -> I2C_SDA.
+			Ä¬ÈÏÇé¿ö: PB6 -> I2C_SCL  PB7 -> I2C_SDA.
 */
 #ifdef USE_I2C_SOFTWARE
 /* *************************************************************  */
-	#define SLAVE_ADDRESS  0x78  // OLEDè®¾å¤‡åœ°å€.
+	#define SLAVE_ADDRESS  0x78  // OLEDÉè±¸µØÖ·.
 	
 	#define I2C_Soft_SCL_PortSource  GPIOB
 	
@@ -53,20 +53,20 @@
 
 
 /*
-		@notice:	ä¸‹åˆ—å®å®šä¹‰å°†ä»…åœ¨ USE_I2C_HAREWARE å¯ç”¨æ—¶ç”Ÿæ•ˆ.
-			I2C_SCL_SDA_PortSource :	ç¡¬ä»¶I2Cæ‰€é‡‡ç”¨çš„GPIOç«¯å£.
-			I2C_SDA_PinSource : é€šä¿¡æ•°æ®å¼•è„š.
-			I2C_SCL_PinSource : æ—¶é’Ÿçº¿å¼•è„š.
+		@notice:	ÏÂÁĞºê¶¨Òå½«½öÔÚ USE_I2C_HAREWARE ÆôÓÃÊ±ÉúĞ§.
+			I2C_SCL_SDA_PortSource :	Ó²¼şI2CËù²ÉÓÃµÄGPIO¶Ë¿Ú.
+			I2C_SDA_PinSource : Í¨ĞÅÊı¾İÒı½Å.
+			I2C_SCL_PinSource : Ê±ÖÓÏßÒı½Å.
 			
-		æ³¨æ„: ç¡¬ä»¶I2Cä»…æ”¯æŒ I2C1. å› æ­¤å®é™…åº”å¡«å…¥I2C1å¯¹åº”çš„GPIOç«¯å£ä¸å¼•è„š. 
+		×¢Òâ: Ó²¼şI2C½öÖ§³Ö I2C1. Òò´ËÊµ¼ÊÓ¦ÌîÈëI2C1¶ÔÓ¦µÄGPIO¶Ë¿ÚÓëÒı½Å. 
 */
 
 #ifdef USE_I2C_HAREWARE
 /* *************************************************************  */
-	// è®¾å¤‡è¯†åˆ«åœ°å€.
+	// Éè±¸Ê¶±ğµØÖ·.
 	#define  SLAVE_ADDRESS  0x78  
 
-	// ç¡¬ä»¶I2Cå¼•è„šå®šä¹‰.
+	// Ó²¼şI2CÒı½Å¶¨Òå.
 	#define I2C_SCL_SDA_PortSource  GPIOB
 	
 	#define I2C_SDA_PinSource GPIO_Pin_7
@@ -80,32 +80,32 @@
 #define HEX_SHOW_TYPE_SIMPLE  0xBB
 
 /*
-	@å‘½ä»¤åœ°å€æ˜ å°„.
+	@ÃüÁîµØÖ·Ó³Éä.
 */
-#define SET_CONTRAST_CONTROL  0x81  // å¯¹æ¯”åº¦è®¾ç½®.
-#define SET_DISPLAY_ON  0xAF  	// å¼€å¯æ˜¾ç¤º.
-#define SET_DISPLAY_OFF  0xAE  	// å…³é—­æ˜¾ç¤º.
-#define SET_MULTIPLEX_RATIO  0xA8		// å¤šè·¯å¤ç”¨ç‡è®¾ç½®. 
-#define SET_DISPLAY_OFFSET  0xD3		// æ˜¾ç¤ºåç§»è®¾ç½®.
-#define SET_DISPLAY_CLK_DIV__OSC_FREQ  0xD5  // æ—¶é’Ÿåˆ†é¢‘æ¯”/æŒ¯è¡å™¨é¢‘ç‡è®¾ç½®.
-#define SET_DISPALY_START_LINE0  0x40  // æ˜¾ç¤ºèµ·å§‹è¡Œè®¾ç½®ä¸º0(ä»0è¡Œå¼€å§‹æ˜¾ç¤º).
-#define SET_SENGMENT_REMAP_OFF  0xA1  //æ­£å¸¸æ˜¾ç¤ºæ¨¡å¼(å…³é—­æ°´å¹³ç¿»è½¬). 
-#define SET_SENGMENT_REMAP_ON  0xA0   // å¼€å¯æ°´å¹³ç¿»è½¬æ˜¾ç¤º.
-#define SET_SENGMENT_VERTICAL_NORMAL  0xC8 // æ­£å¸¸æ˜¾ç¤ºæ¨¡å¼(å…³é—­å‚ç›´ç¿»è½¬).
-#define SET_SENGMENT_VERTICAL_ON  0xC0 // å¼€å¯å‚ç›´ç¿»è½¬.
-#define SET_COMPINS_HARDWARE_CONFIG  0xDA  // COMå¼•è„šç¡¬ä»¶é…ç½®.
-#define SET_PRE_CHARGE_PERIOD  0xD9 		// é¢„å……ç”µå‘¨æœŸè®¾ç½®.
-#define SET_VCOMH_DESELECT_LEVEL  0xDB  // è®¾ç½®VCOMHç”µå‹å€ç‡.
-#define SET_ENTIRE_DISPLAY_RAM  0xA4  // è·ŸéšRAMæ˜¾ç¤º.
-#define SET_ENTIRE_DISPLAY_ON  0xA5		// ä¸è·ŸéšRAMæ˜¾ç¤º.
-#define SET_NORMAL_DISPLAY  0xA6  // æ­£å¸¸æ˜¾ç¤º.
-#define SET_INVERSE_DISPLAY  0xA7 // åç›¸æ˜¾ç¤º.
-#define SET_CHARGE_PUMP  0x8D   // è®¾ç½®å……ç”µæ³µ.
-#define SET_ADDRESSING_MODE 0x20  // å¯»å€æ¨¡å¼è®¾ç½®.
+#define SET_CONTRAST_CONTROL  0x81  // ¶Ô±È¶ÈÉèÖÃ.
+#define SET_DISPLAY_ON  0xAF  	// ¿ªÆôÏÔÊ¾.
+#define SET_DISPLAY_OFF  0xAE  	// ¹Ø±ÕÏÔÊ¾.
+#define SET_MULTIPLEX_RATIO  0xA8		// ¶àÂ·¸´ÓÃÂÊÉèÖÃ. 
+#define SET_DISPLAY_OFFSET  0xD3		// ÏÔÊ¾Æ«ÒÆÉèÖÃ.
+#define SET_DISPLAY_CLK_DIV__OSC_FREQ  0xD5  // Ê±ÖÓ·ÖÆµ±È/Õñµ´Æ÷ÆµÂÊÉèÖÃ.
+#define SET_DISPALY_START_LINE0  0x40  // ÏÔÊ¾ÆğÊ¼ĞĞÉèÖÃÎª0(´Ó0ĞĞ¿ªÊ¼ÏÔÊ¾).
+#define SET_SENGMENT_REMAP_OFF  0xA1  //Õı³£ÏÔÊ¾Ä£Ê½(¹Ø±ÕË®Æ½·­×ª). 
+#define SET_SENGMENT_REMAP_ON  0xA0   // ¿ªÆôË®Æ½·­×ªÏÔÊ¾.
+#define SET_SENGMENT_VERTICAL_NORMAL  0xC8 // Õı³£ÏÔÊ¾Ä£Ê½(¹Ø±Õ´¹Ö±·­×ª).
+#define SET_SENGMENT_VERTICAL_ON  0xC0 // ¿ªÆô´¹Ö±·­×ª.
+#define SET_COMPINS_HARDWARE_CONFIG  0xDA  // COMÒı½ÅÓ²¼şÅäÖÃ.
+#define SET_PRE_CHARGE_PERIOD  0xD9 		// Ô¤³äµçÖÜÆÚÉèÖÃ.
+#define SET_VCOMH_DESELECT_LEVEL  0xDB  // ÉèÖÃVCOMHµçÑ¹±¶ÂÊ.
+#define SET_ENTIRE_DISPLAY_RAM  0xA4  // ¸úËæRAMÏÔÊ¾.
+#define SET_ENTIRE_DISPLAY_ON  0xA5		// ²»¸úËæRAMÏÔÊ¾.
+#define SET_NORMAL_DISPLAY  0xA6  // Õı³£ÏÔÊ¾.
+#define SET_INVERSE_DISPLAY  0xA7 // ·´ÏàÏÔÊ¾.
+#define SET_CHARGE_PUMP  0x8D   // ÉèÖÃ³äµç±Ã.
+#define SET_ADDRESSING_MODE 0x20  // Ñ°Ö·Ä£Ê½ÉèÖÃ.
 
 /*
-	@notice: OLEDé…ç½®ç»“æ„ä½“ï¼Œåˆ©ç”¨è¯¥ç»“æ„ä½“è¿›è¡Œé…ç½®å¯è°ƒèŠ‚OLEDäº®åº¦ï¼Œæ˜¾ç¤ºåè½¬ï¼Œæ­£åç›¸æ˜¾ç¤ºç­‰åŠŸèƒ½.
-						å¯ä¼ å…¥NULLï¼Œå°†ä½¿ç”¨é»˜è®¤å‚æ•°è¿›è¡Œé…ç½®.
+	@notice: OLEDÅäÖÃ½á¹¹Ìå£¬ÀûÓÃ¸Ã½á¹¹Ìå½øĞĞÅäÖÃ¿Éµ÷½ÚOLEDÁÁ¶È£¬ÏÔÊ¾·´×ª£¬Õı·´ÏàÏÔÊ¾µÈ¹¦ÄÜ.
+						¿É´«ÈëNULL£¬½«Ê¹ÓÃÄ¬ÈÏ²ÎÊı½øĞĞÅäÖÃ.
 */
 typedef struct oled_type {
 	
@@ -123,23 +123,33 @@ typedef struct oled_type {
 #define Address_Mode_Vertical  0x01
 #define Address_Mode_Page  0x02
 
-void OLED_Init(OLED_InitTypeDef *OLED_InitStructure); // OLEDåˆå§‹åŒ–.
+typedef struct {
+	char hzgbk[2]; // ºº×ÖµÄGBK±àÂë
 
-void OLED_ClearScreen(void); // OLEDæ¸…å±.
+	uint8_t font[32]; // ×ÖÌåÊı¾İ£¬16x16µãÕó×ÖÌå
 
-void OLED_DisplayChar(uint8_t Lines, uint8_t Columns, char w_char); // æ˜¾ç¤ºå­—ç¬¦.
+} OLED_ChineseFontType;
 
-void OLED_DisplayStr(uint8_t Lines, uint8_t Columns, char* str); // æ˜¾ç¤ºå­—ç¬¦ä¸².
 
-void OLED_DisplayNum(uint8_t Lines, uint8_t Columns, uint64_t Num); // æ˜¾ç¤ºæ•°å­—.
+void OLED_Init(OLED_InitTypeDef *OLED_InitStructure); // OLED³õÊ¼»¯.
 
-void OLED_DisplaySignedNum(uint8_t Lines, uint8_t Columns, int64_t Num); // æ˜¾ç¤ºæ•°å­—(æ­£è´Ÿ).
+void OLED_ClearScreen(void); // OLEDÇåÆÁ.
 
-void OLED_DisplayHexNum_4Byte(uint8_t Lines, uint8_t Columns, uint32_t HexNum,  uint8_t Mode); // æ˜¾ç¤ºæ•°å­—(åå…­è¿›åˆ¶)(4å­—èŠ‚).
+void OLED_DisplayChar(uint8_t Lines, uint8_t Columns, char w_char); // ÏÔÊ¾×Ö·û.
 
-void OLED_DisplayHexNum_1Byte(uint8_t Lines, uint8_t Columns, uint8_t HexNum, uint8_t Mode); // æ˜¾ç¤ºæ•°å­—(åå…­è¿›åˆ¶)(1å­—èŠ‚).
+void OLED_DisplayStr(uint8_t Lines, uint8_t Columns, char* str); // ÏÔÊ¾×Ö·û´®.
 
-void OLED_DisplayBinNum(uint8_t Lines, uint8_t Columns, uint8_t Num);  // äºŒè¿›åˆ¶æ˜¾ç¤º.
+void OLED_DisplayNum(uint8_t Lines, uint8_t Columns, uint64_t Num); // ÏÔÊ¾Êı×Ö.
+
+void OLED_DisplaySignedNum(uint8_t Lines, uint8_t Columns, int64_t Num); // ÏÔÊ¾Êı×Ö(Õı¸º).
+
+void OLED_DisplayHexNum_4Byte(uint8_t Lines, uint8_t Columns, uint32_t HexNum,  uint8_t Mode); // ÏÔÊ¾Êı×Ö(Ê®Áù½øÖÆ)(4×Ö½Ú).
+
+void OLED_DisplayHexNum_1Byte(uint8_t Lines, uint8_t Columns, uint8_t HexNum, uint8_t Mode); // ÏÔÊ¾Êı×Ö(Ê®Áù½øÖÆ)(1×Ö½Ú).
+
+void OLED_DisplayBinNum(uint8_t Lines, uint8_t Columns, uint8_t Num);  // ¶ş½øÖÆÏÔÊ¾.
+
+void OLED_DisplayChinese(uint8_t Lines, uint8_t Columns, const char *cnstr);
 
 
 #endif // __OLED_DRI_H
